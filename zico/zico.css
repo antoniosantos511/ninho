@@ -1,0 +1,723 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+/* inicio HEADER */
+.nav {
+    background-color: #000000; /* preto */
+    color: #FFFFFF; /* Branco para o texto */
+    padding: 20px;
+    display: flex; /* flexbox para alinhar itens */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    max-width: 100%;
+    max-height: 110px;
+    border-bottom: #da0707 30px solid;
+    margin-top: 0px;
+    z-index: 999;
+    
+}
+
+.nav img {
+    height: 180px; /* Ajuste conforme necessário */
+    margin-right: 10px; /* Espaço entre a imagem e o texto */
+    width: auto;
+    margin-top: 30px;
+    transform: 0.3s ease;
+}
+
+.nav img:hover{
+transform: scale(1.1);
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li {
+    margin: 0 15px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s;
+}
+
+/* Adiciona cor de hover e sublinhado animado */
+.nav-list a:hover {
+    color: #ff6347; /* Tomate */
+}
+
+/* Transição de efeito de elevação */
+.nav-list a {
+    display: inline-block;
+    padding: 10px 15px;
+    transition: transform 0.3s;
+}
+
+.nav-list a:hover {
+    transform: translateY(-3px);
+}
+/*Fim header*/
+
+
+/* style menu mobile */
+.menu-mobile {
+    background-color: #000000b0;
+    backdrop-filter: blur(8px);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    display: block;
+    width: 0%;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+  
+  .menu-mobile.abrir-menu {
+    width: 30%;
+  }
+  
+  .menu-mobile.abrir-menu ~ .overlay-menu {
+    display: block;
+  }
+  
+  .btn-abrir_menu {
+    display:block;
+    position: absolute;
+    top: 30px;
+    right: 10px;
+  }
+  
+  .btn-abrir_menu img {
+    display: none;
+    width: 30px;
+    height: 35px;
+  }
+  
+
+  .menu-mobile .btn-fechar img {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    margin-right: 50px;
+  }
+  
+  .menu-mobile nav ul {
+    text-align: center;
+    list-style-type: none;
+  }
+  
+  .menu-mobile nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 300;
+    padding: 20px 8%;
+    display: block;
+    transition: border-right 0.5s ease, font-size 0.5s ease;
+  }
+  
+  .menu-mobile nav ul li a:hover {
+    border: solid #050505 1px;
+    font-size: 1.7rem;
+  }
+  
+  .menu-mobile .btn-fechar img {
+    width: 30px;
+    height: 30px;
+    display: block;
+    margin: 10px 10px 10px 90%;
+  }
+  
+  .overlay-menu {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 88888;
+    display: none;
+  }
+/*fim style menu mobile*/
+  
+/* BOTÃO VOLTAR AO TOPO */
+#botao {
+    transition: 1s ease;
+  
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    z-index: 999;
+  
+    transform: translateY(15vh) translateX(-25px);
+  
+    width: 10px;
+    height: 10px;
+  
+    opacity: 0;
+  }
+  
+  #botao.btnrolagem {
+    transform: translateY(0);
+  
+    width: 50px;
+    height: 50px;
+  
+    opacity: 100;
+  }
+  
+  #botao.btnrolagem img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  #botao img {
+    transition: 1s ease;
+  
+    width: 0px;
+    height: 0px;
+  }
+/*fim botao voltar ao topo*/
+
+
+
+/*início slide de foto*/
+.slideshow-container {
+    position: relative;
+    max-width: 450px;
+    max-height: 100%;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.slideshow-container h3{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2.0rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.slides {
+    display: flex;
+    height: 100%; /* Garantir que as slides ocupem toda a altura do contêiner */
+}
+
+.slides img {
+    width: 100%; /* Ajusta a largura da imagem ao tamanho do contêiner */
+    height: 100%; /* Ajusta a altura da imagem ao tamanho do contêiner */
+    object-fit: cover; /* Garante que a imagem cubra o contêiner sem distorcer */
+    display: none;
+
+}
+
+.slideshow-container img:first-child {
+    display: block;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 16px;
+    cursor: pointer;
+    color: rgb(63, 63, 63);
+    font-weight: bold;
+    font-size: 40px;
+    z-index: 1;
+}
+
+.prev {
+    left: -55px; /* Posiciona o botão à esquerda fora da imagem */
+    border-radius: 3px 0 0 3px;
+}
+
+.next {
+    right: -55px; /* Posiciona o botão à direita fora da imagem */
+    border-radius: 0 3px 3px 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+/*fim dos slides*/
+
+
+
+/*plano de fundo com transparência vermelha*/
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://s3-sa-east-1.amazonaws.com/flamengoingressos/prod/bg-darker.jpg'); /* Caminho para a imagem do Maracanã */
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+/*fim plano de fundo*/
+
+
+
+/*início corpo do site*/
+  .container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9); /* Fundo branco com transparência */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    position: relative; /* Para que o z-index funcione corretamente */
+    z-index: 1; /* Coloca os cards na frente da imagem de fundo */
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .card {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f7f7f7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .card img {
+    height:300px;
+    width: 500px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    
+  }
+
+  .card h3 {
+    color: #000000;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .card p {
+    color: #636161;
+    line-height: 1.8;
+    font-size: 1.2em;
+  }
+/*fim corpo do site*/
+
+
+/*RÓDAPE*/
+footer {
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.rodape-superior {
+    background-color: #da0707;
+    height: 50px;
+
+}
+
+.rodape-inferior {
+    background-color: black;
+    padding: 20px 0;
+}
+
+.rodape-inferior a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.rodape-inferior a:hover {
+    color: red;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: self-end;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu-simplificado, .suporte {
+    flex: 1;
+    padding: 0 20px;
+    margin-bottom: 10px;
+    
+}
+
+.menu-simplificado ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    margin-bottom: 10px;
+    
+}
+
+.menu-simplificado li {
+    margin-bottom: 10px;
+}
+
+
+.menu-simplificado a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.3em;
+    transition: color 0.3s, transform 0.3s, background-color 0.3s;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+
+.menu-simplificado a:hover {
+    color: #e74c3c; 
+    transform: scale(1.1);
+}
+
+.suporte h2 {
+    margin-bottom: 10px;
+}
+
+.suporte p {
+    margin-bottom: 10px; /* Espaçamento entre parágrafos no suporte */
+}
+
+.copyright {
+    text-align: center;
+}
+/*fim do rodapé*/
+
+
+
+/* Responsividade */
+@media (max-width: 900px) {
+    
+    .nav{
+       max-width: 100%;
+    }
+    
+    .nav-list {
+        display: none;
+        max-width: 100%;
+        position: right;
+        top: 50px;
+        left: 0;
+    }
+    .nav img{
+        width: 170px;
+        height: 170px;
+        margin-top: 30px;
+    }
+
+    .nav-list li {
+        text-align: center;
+        padding: 5px; 
+        max-width: 100%;
+    }
+
+    .nav-list a {
+        text-decoration: none;
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+        position: relative;
+        transition: color 0.3s;
+        padding: 3px;
+    }
+
+
+    .menu-mobile {
+        display: block; /* Mostra o menu mobile */
+        
+    }
+
+    .overlay-menu {
+        display: block; /* Mostra o overlay para cobrir o conteúdo principal */
+    }
+
+
+
+    .slideshow-container {
+        max-width: 80%; /* Reduz a largura máxima do slideshow */
+    }
+
+
+    .container {
+        padding: 15px; /* Reduz o padding do container */
+    }
+
+    .card {
+        padding: 10px; /* Reduz o padding dos cards */
+    }
+
+    .card h3 {
+        font-size: 1.5em; /* Reduz o tamanho da fonte do título do card */
+    }
+
+    .card p {
+        font-size: 1em; /* Reduz o tamanho da fonte do texto do card */
+    }
+
+    .card img {
+        height:250px;
+        width: 450px;
+        border-radius: 6px;
+        margin-bottom: 10px;
+        
+      }
+
+      .background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://s3-sa-east-1.amazonaws.com/flamengoingressos/prod/bg-darker.jpg'); /* Caminho para a imagem do Maracanã */
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+    }
+
+    .rodape-inferior, .rodape-superior{
+
+        width: 100%;
+}
+    .menu-simplificado ul {
+        padding: 0 20px;
+    }
+
+    .suporte{
+        margin: right;
+        margin-right: 20px;
+    }
+}
+/*fim responsividade -915px*/
+
+/*responsividade para telas menores que 615px*/
+@media (max-width: 675px) {
+
+    .nav {
+        padding: 10px; /* Reduz padding para economizar espaço */
+    }
+
+    .nav img {
+        width: 150px;
+        height: 150px; /* Reduz o tamanho do logo para melhor ajuste */
+        margin-top: 20px; /* Ajusta margem superior do logo */
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: row; /* Altera para uma disposição vertical */
+        align-items: center; /* Centraliza os itens verticalmente */
+        justify-content: center; /* Centraliza os itens horizontalmente */
+        height: auto; /* Altura automática para ajuste do conteúdo */
+        max-height: 0; /* Começa com altura zero */
+        transition: max-height 0.3s ease; /* Transição suave para a altura */
+    }
+
+    .nav-list li {
+        margin: 10px; /* Espaçamento entre os itens da lista */
+        text-align: center; /* Centraliza o texto dos links */
+    }
+
+    .nav-list a {
+        text-decoration: none;
+        color: white;
+        font-size: 11px;
+        font-weight: bold;
+        position: relative;
+        transition: color 0.3s;
+        padding: 6px;
+    }
+
+
+    .menu-mobile {
+        display: block; /* Mostra o menu mobile */
+    }
+
+    .overlay-menu {
+        display: block; /* Mostra o overlay para cobrir o conteúdo principal */
+    }
+
+    .slideshow-container {
+        max-width: 80%; /* Reduz ainda mais a largura máxima do slideshow */
+    }
+
+    .slideshow-container h3 {
+        font-size: 1.5rem; /* Reduz o tamanho da fonte do título */
+    }
+
+    .prev, .next {
+        font-size: 30px; /* Reduz o tamanho dos botões de navegação */
+        padding: 12px; /* Reduz o padding dos botões */
+    }
+
+    .container {
+        max-width: 100%; /* Reduz a largura máxima do container */
+    }
+
+    .card img {
+        height:200px;
+        width: 400px;
+        border-radius: 6px;
+        margin-bottom: 10px;
+        
+      }
+
+      .background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://s3-sa-east-1.amazonaws.com/flamengoingressos/prod/bg-darker.jpg'); /* Caminho para a imagem do Maracanã */
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+    }
+
+
+    .rodape-inferior, .rodape-superior {
+        width: 100%; /* Rodapé ocupa a largura total */
+    }
+
+    .suporte {
+        margin-right: 0; /* Remove margem direita do bloco de suporte */
+    }
+}
+/*fim responsividade -675px*/
+
+
+@media (max-width: 500px) {
+
+    .nav {
+        padding: 10px; /* Reduz padding para economizar espaço */
+    }
+
+    .nav img {
+        width: 120px;
+        height: 120px; /* Reduz o tamanho do logo para melhor ajuste */
+        margin-top: 15px; /* Ajusta margem superior do logo */
+    }
+
+    .nav-list {
+        flex-direction: row; /* Altera para uma disposição vertical */
+        align-items: center; /* Centraliza os itens verticalmente */
+        justify-content: center; /* Centraliza os itens horizontalmente */
+        height: auto; /* Altura automática para ajuste do conteúdo */
+        max-height: 0; /* Começa com altura zero */
+        transition: max-height 0.3s ease; /* Transição suave para a altura */
+    }
+
+    .nav-list li {
+        margin: 5px; /* Espaçamento entre os itens da lista */
+        text-align: center; /* Centraliza o texto dos links */
+    }
+
+    .nav-list a {
+        text-decoration: none;
+        color: white;
+        font-size: 10px;
+        font-weight: bold;
+        position: relative;
+        transition: color 0.3s;
+        padding: 5px;
+    }
+
+    .menu-mobile {
+        display: block; /* Mostra o menu mobile */
+    }
+
+    .overlay-menu {
+        display: block; /* Mostra o overlay para cobrir o conteúdo principal */
+    }
+
+
+    .container {
+        max-width: 100%; /* Ocupa toda a largura disponível */
+        margin: 26px auto; /* Ajusta o espaçamento das margens */
+    }
+
+    
+    .slideshow-container {
+        max-width: 80%; /* Ocupa toda a largura disponível */
+        margin-top: 15px; /* Reduz o espaço superior */
+        margin-bottom: 15px; /* Reduz o espaço inferior */
+    }
+
+    .slides img {
+        height: auto; /* Ajusta a altura da imagem automaticamente */
+    }
+
+    .prev, .next {
+        font-size: 20px; /* Reduz o tamanho dos botões de navegação */
+        padding: 10px; /* Reduz o padding dos botões */
+    }
+
+    .card img {
+        height:150px;
+        width: 300px;
+        border-radius: 6px;
+        margin-bottom: 10px;
+        
+      }
+
+      .background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 641px;
+        height: 570x;
+        background-image: url('https://s3-sa-east-1.amazonaws.com/flamengoingressos/prod/bg-darker.jpg'); /* Caminho para a imagem do Maracanã */
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+    }
+
+    .background {
+        background-attachment: scroll; /* Permite que o plano de fundo role com o conteúdo */
+    }
+
+
+    .rodape-inferior, .rodape-superior {
+        width: 100%; /* Rodapé ocupa a largura total */
+    }
+
+    .suporte {
+        margin-right: 0; /* Remove margem direita do bloco de suporte */
+    }
+}
+/*fim responsividade -570px*/

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Por dentro do ninho</title>
+    <link rel="icon" type="image/x-icon" href="imagens00/000.png">
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<!-- INICIO DO CABEÇALHO(HEADER)-->
+<nav class="nav">
+    <a href="../index.html">
+        <img src="imagens/000.png">
+    </a>
+    <ul class="nav-list">
+        <li>
+            <a href="../index.html">INICIO</a>
+        </li>
+
+        <li>
+            <a href="../CADASTRO/CADASTRO.HTML">LOGIN</a>
+        </li>
+
+        <li>
+            <a href="../titulos/titulos.html">TÍTULOS</a>
+        </li>
+        <li>
+            <a href="../fotos/fotos.html">FOTOS</a>
+        </li>
+        <li>
+            <a href="../zico/zico.html">ZICO</a>
+        </li>
+    </ul>
+</nav>
+
+<body>
+    <div class="container">
+        <h2>CADASTRO</h2>
+        <form action="login.php" method="POST">
+            <label for="nome">Nome completo:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required minlength="6">
+
+            <label for="endereco">endereço:</label>
+            <input type="text" id="endereco" name="endereco" required>
+
+            <label for="senha">telefone:</label>
+            <input type="text" id="telefone" name="telefone" required minlength="8">
+
+            <button type="submit">Enviar</button><br>
+            <a href="../CADASTRO/CADASTRO.HTML">VOLTAR</a><br>
+            <a href="../recu-senha/index.html">ESQUECI A SENHA</a>
+        </form>
+    </div>
+</body>
+
+<!--inicio do rodape (kaiky)-->
+<footer class="rodape-superior">
+</footer>
+
+<footer class="rodape-inferior">
+    <div class="flex">
+        <nav class="menu-simplificado">
+            <ul>
+                <h2>Menu</h2>
+            </ul>
+            <ul>
+                <li><a href="historia/historia.html">História</a></li>
+                <li><a href="fotos/fotos.html">Fotos</a></li>
+                <li><a href="titulos/titulos.html">Títulos</a></li>
+                <li><a href="../zico/zico.html">Zico</a></li>
+            </ul>
+        </nav>
+
+        <nav class="copyright">
+            <p>&copy; 2024 Por Dentro do Ninho</p>
+        </nav>
+    </div>
+</footer>

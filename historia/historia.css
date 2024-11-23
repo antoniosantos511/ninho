@@ -1,0 +1,608 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+   
+    
+   
+}
+
+/* inicio HEADER */
+.nav {
+    background-color: #000000; /* preto */
+    color: #FFFFFF; /* Branco para o texto */
+    padding: 20px;
+    display: flex; /* flexbox para alinhar itens */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    max-width: 100%;
+    max-height: 110px;
+    border-bottom: #da0707 30px solid;
+    margin-top: 0px;
+    z-index: 999;
+    
+}
+
+.nav img {
+    height: 180px; /* Ajuste conforme necessário */
+    margin-right: 10px; /* Espaço entre a imagem e o texto */
+    width: auto;
+    margin-top: 30px;
+    transform: 0.3s ease;
+}
+
+.nav img:hover{
+transform: scale(1.1);
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li {
+    margin: 0 15px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s;
+}
+
+/* Adiciona cor de hover e sublinhado animado */
+.nav-list a:hover {
+    color: #ff6347; /* Tomate */
+}
+
+/* Transição de efeito de elevação */
+.nav-list a {
+    display: inline-block;
+    padding: 10px 15px;
+    transition: transform 0.3s;
+}
+
+.nav-list a:hover {
+    transform: translateY(-3px);
+}
+/*Fim header*/
+
+
+/* style menu mobile */
+.menu-mobile {
+    background-color: #000000b0;
+    backdrop-filter: blur(8px);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9999999;
+    display: none;
+    width: 0%;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+  
+  .menu-mobile.abrir-menu {
+    width: 30%;
+  }
+  
+  .menu-mobile.abrir-menu ~ .overlay-menu {
+    display: block;
+  }
+  
+  .btn-abrir_menu {
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 10px;
+  }
+  
+  .btn-abrir_menu img {
+    display: none;
+    width: 30px;
+    height: 35px;
+  }
+  
+
+  .menu-mobile .btn-fechar img {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    margin-right: 50px;
+  }
+  
+  .menu-mobile nav ul {
+    text-align: center;
+    list-style-type: none;
+  }
+  
+  .menu-mobile nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 300;
+    padding: 20px 8%;
+    display: block;
+    transition: border-right 0.5s ease, font-size 0.5s ease;
+  }
+  
+  .menu-mobile nav ul li a:hover {
+    border: solid #050505 1px;
+    font-size: 1.7rem;
+  }
+  
+  .menu-mobile .btn-fechar img {
+    width: 30px;
+    height: 30px;
+    display: block;
+    margin: 10px 10px 10px 90%;
+  }
+  
+  .overlay-menu {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 88888;
+    display: none;
+  }
+/*fim style menu mobile*/
+  
+/* BOTÃO VOLTAR AO TOPO */
+#botao {
+    transition: 1s ease;
+  
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    z-index: 999;
+  
+    transform: translateY(15vh) translateX(-25px);
+  
+    width: 10px;
+    height: 10px;
+  
+    opacity: 0;
+  }
+  
+  #botao.btnrolagem {
+    transform: translateY(0);
+  
+    width: 50px;
+    height: 50px;
+  
+    opacity: 100;
+  }
+  
+  #botao.btnrolagem img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  #botao img {
+    transition: 1s ease;
+  
+    width: 0px;
+    height: 0px;
+  }
+/*fim botao voltar ao topo*/
+
+
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section {
+    width: 90%;
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+
+}
+
+section h2 {
+    color: #c40000;
+    border-bottom: 2px solid #ff0000;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+section .image-container {
+    display: grid;
+    padding: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 3px;
+    align-items: center; /* Alinha verticalmente as imagens */
+    justify-items: center; /* Alinha horizontalmente as imagens */
+    margin-bottom: 0px;
+    
+}
+
+
+section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+
+pre {
+    white-space: pre-wrap; /* Garante que o texto será quebrado corretamente */
+    font-family: inherit;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+
+/* Estilos para o player de áudio */
+.audio-player {
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.audio-player h2 {
+    margin-bottom: 10px;
+}
+
+
+
+/*estilos para dar espaçamento e colocar os textos em listas*/
+.uniform-list {
+    list-style-type: disc; /* Muda os marcadores para pontos */
+    padding-left: 20px; /* Adiciona espaçamento à esquerda */
+}
+
+.uniform-list li {
+    margin-bottom: 15px; /* Adiciona espaçamento entre os itens */
+}
+
+.uniform-list strong {
+    display: block; /* Exibe o texto em negrito em uma nova linha */
+    margin-bottom: 2px; /* Espaçamento entre o título e o texto */
+}
+
+
+
+
+/*RÓDAPE*/
+footer {
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.rodape-superior {
+    background-color: #da0707;
+    height: 50px;
+
+}
+
+.rodape-inferior {
+    background-color: black;
+    padding: 20px 0;
+}
+
+.rodape-inferior a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.rodape-inferior a:hover {
+    color: red;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: self-end;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu-simplificado, .suporte {
+    flex: 1;
+    padding: 0 20px;
+    margin-bottom: 10px;
+    
+}
+
+.menu-simplificado ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.menu-simplificado li {
+    margin-bottom: 10px;
+}
+
+.menu-simplificado a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.3em;
+    transition: color 0.3s, transform 0.3s, background-color 0.3s;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+
+.menu-simplificado a:hover {
+    color: #e74c3c; 
+    transform: scale(1.1);
+}
+
+.suporte h2 {
+    margin-bottom: 10px;
+}
+
+.suporte p {
+    margin-bottom: 10px; /* Espaçamento entre parágrafos no suporte */
+}
+
+.copyright {
+    text-align: center;
+}
+/*fim do rodapé*/
+
+
+/* Responsividade */
+@media (max-width: 900px) {
+    
+    .nav{
+       max-width: 100%;
+    }
+    
+    .nav-list {
+        display: none;
+        max-width: 100%;
+        position: right;
+        top: 50px;
+        left: 0;
+    }
+    .nav img{
+        width: 170px;
+        height: 170px;
+        margin-top: 30px;
+    }
+
+    .nav-list li {
+        text-align: center;
+        padding: 5px; 
+        max-width: 100%;
+    }
+
+    .nav-list a {
+        text-decoration: none;
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+        position: relative;
+        transition: color 0.3s;
+        padding: 3px;
+    }
+
+
+    .btn-abrir_menu img {
+        display: block;
+      }
+    
+      .menu-mobile {
+        display: block;
+      }
+    
+    section {
+        width: 100%; /* Altera a largura para ocupar toda a largura disponível */
+        padding: 5px; /* Reduz o padding */
+    }
+
+    section .image-container {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Ajusta o tamanho das colunas do grid */
+    }
+
+
+
+    .rodape-inferior, .rodape-superior{
+
+        width: 100%;
+    }
+
+    .menu-simplificado ul {
+        padding: 0 20px;
+    }
+
+    .suporte{
+        margin: right;
+        margin-right: 20px;
+    }
+}
+/*fim responsividade -915px*/
+
+/*responsividade para telas menores que 615px*/
+@media (max-width: 675px) {
+
+    .nav {
+        padding: 10px; /* Reduz padding para economizar espaço */
+    }
+
+    .nav img {
+        width: 150px;
+        height: 150px; /* Reduz o tamanho do logo para melhor ajuste */
+        margin-top: 20px; /* Ajusta margem superior do logo */
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: row; /* Altera para uma disposição vertical */
+        align-items: center; /* Centraliza os itens verticalmente */
+        justify-content: center; /* Centraliza os itens horizontalmente */
+        height: auto; /* Altura automática para ajuste do conteúdo */
+        max-height: 0; /* Começa com altura zero */
+        transition: max-height 0.3s ease; /* Transição suave para a altura */
+    }
+
+    .nav-list li {
+        margin: 10px; /* Espaçamento entre os itens da lista */
+        text-align: center; /* Centraliza o texto dos links */
+    }
+
+    .nav-list a {
+        text-decoration: none;
+        color: white;
+        font-size: 11px;
+        font-weight: bold;
+        position: relative;
+        transition: color 0.3s;
+        padding: 6px;
+    }
+
+
+    .btn-abrir_menu img {
+        display: block;
+      }
+    
+      .menu-mobile {
+        display: block;
+      }
+
+    section {
+        padding: 5px; /* Reduz ainda mais o padding */
+        max-width: 100%;
+    }
+
+    section .image-container {
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); /* Ajusta o tamanho das colunas do grid */
+    
+    }
+
+    section h2 {
+        font-size: 1.8rem; /* Reduz o tamanho da fonte do título */
+    }
+
+    section p {
+        font-size: 1rem; /* Reduz o tamanho da fonte do parágrafo */
+    }
+
+
+
+   
+    .rodape-inferior, .rodape-superior {
+        width: 100%; /* Rodapé ocupa a largura total */
+    }
+
+    .suporte {
+        margin-right: 0; /* Remove margem direita do bloco de suporte */
+    }
+}
+/*fim responsividade -675px*/
+
+
+@media (max-width: 500px) {
+
+    .nav {
+        padding: 10px; /* Reduz padding para economizar espaço */
+    }
+
+    .nav img {
+        width: 120px;
+        height: 120px; /* Reduz o tamanho do logo para melhor ajuste */
+        margin-top: 15px; /* Ajusta margem superior do logo */
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: row; /* Altera para uma disposição vertical */
+        align-items: center; /* Centraliza os itens verticalmente */
+        justify-content: center; /* Centraliza os itens horizontalmente */
+        height: auto; /* Altura automática para ajuste do conteúdo */
+        max-height: 0; /* Começa com altura zero */
+        transition: max-height 0.3s ease; /* Transição suave para a altura */
+    }
+
+    .nav-list li {
+        margin: 5px; /* Espaçamento entre os itens da lista */
+        text-align: center; /* Centraliza o texto dos links */
+    }
+
+    .nav-list a {
+        text-decoration: none;
+        color: white;
+        font-size: 10px;
+        font-weight: bold;
+        position: relative;
+        transition: color 0.3s;
+        padding: 5px;
+    }
+
+
+    .btn-abrir_menu img {
+        display: block;
+      }
+    
+      .menu-mobile {
+        display: block;
+      }
+
+    section {
+        padding: 3px; /* Reduz ainda mais o padding */
+    }
+
+section img{
+    max-width: 100%;
+    width: 300px;
+    height: 300px;
+}
+
+
+    section .image-container {
+        grid-template-columns: repeat(auto-fit, minmax(50px, 1fr)); /* Ajusta o tamanho das colunas do grid */
+    }
+
+    section h2 {
+        font-size: 1.5rem; /* Reduz ainda mais o tamanho da fonte do título */
+    }
+
+    section p {
+        font-size: 0.9rem; /* Reduz ainda mais o tamanho da fonte do parágrafo */
+    }
+
+
+
+    .rodape-inferior, .rodape-superior {
+        width: 100%; /* Rodapé ocupa a largura total */
+    }
+
+    .suporte {
+        margin-right: 0; /* Remove margem direita do bloco de suporte */
+    }
+}
+/*fim responsividade -570px*/
